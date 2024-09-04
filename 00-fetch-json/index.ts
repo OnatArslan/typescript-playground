@@ -9,15 +9,19 @@ interface Todo {
 }
 
 axios.get(url).then((response) => {
-  const todos = response.data;
-  todos.forEach((todo: Todo) => {
+  const todos = response.data as Todo[];
+  todos.forEach((todo) => {
     const id = todo.id;
     const title = todo.title;
-    const complated = todo.completed;
-    console.log(`
-   The Todo with ID: ${id}
-   Has a title of : ${title}
-   Is it complated? ${complated}
-   `);
+    const completed = todo.completed;
+    logTodo(id, title, completed);
   });
 });
+
+const logTodo = (id: number, title: string, completed: boolean) => {
+  console.log(`
+   The Todo with ID: ${id}
+   Has a title of : ${title}
+   Is it complated? ${completed}
+   `);
+};
