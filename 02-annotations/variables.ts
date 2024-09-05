@@ -30,3 +30,23 @@ let point: { x: number; y: number } = {
 const logNumber: (i: number) => void = (i: number) => {
   console.log(i);
 };
+
+// When to use type annotations
+
+// 1) Function that returns any type
+const json = `{
+"x":10,"y":20
+}`;
+
+const coordinates: { X: number; y: number } = JSON.parse(json);
+console.log(coordinates);
+
+// 2) When we declare a variable on one line and initalizate it later
+let words = [`dog`, `cat`, `pencil`, `mama`, `monkey`];
+let foundWord: boolean;
+
+for (let i = 0; i < words.length; i++) {
+  if (words[i] === `cat`) {
+    foundWord = true;
+  }
+}
