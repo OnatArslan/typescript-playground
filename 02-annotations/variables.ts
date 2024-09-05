@@ -1,5 +1,4 @@
 // Primitives -------------------------------
-let apples: number = 5;
 
 // This will give an error because of type annotations
 // apples = 'hey';
@@ -23,3 +22,7 @@ class Car {}
 let car: Car = new Car();
 
 // Object literal
+let point: { x: number; y: number } = {
+  x: 10,
+  y: 20,
+};
